@@ -8,9 +8,9 @@ import RoomInfo from "@/components/RoomInfo";
 import { MOCK_PROPERTIES } from "@/data/properties";
 import type { Property, Room } from "@/types";
 
-const toRoom = (property: Property): Room => ({ id: property.id, title: property.title, subtitle: property.location, location: property.location, rating: property.rating, reviewCount: property.reviewCount, guests: 4, beds: 2, baths: 1, pricePerNight: property.pricePerNight, images: [0, 1, 2, 3].map((index) => ({ id: `${property.id}-${index}`, url: index === 0 ? property.imageUrl : `https://picsum.photos/seed/${property.id}-${index}/1200/900`, alt: property.title })), host: { name: "Ernesto Gabriel", avatarUrl: "", yearsHosting: 3, isSuperhost: true }, amenities: ["Wifi", "Cocina", "Aire acondicionado", "Superhost", "Lavadora", "Vista al mar"].map((label) => ({ id: label, label, icon: null })) });
+const toRoom = (property: Property): Room => ({ id: property.id, title: property.title, subtitle: property.location, location: property.location, rating: property.rating, reviewCount: property.reviewCount, guests: 4, beds: 2, baths: 1, pricePerNight: property.pricePerNight, images: [0, 1, 2, 3].map((index) => ({ id: `${property.id}-${index}`, url: index === 0 ? property.imageUrl : `https://source.unsplash.com/featured/1200x900/?apartment,interior&sig=${property.id.length + index}`, alt: property.title })), host: { name: "Ernesto Gabriel", avatarUrl: "", yearsHosting: 3, isSuperhost: true }, amenities: ["Wifi", "Cocina", "Aire acondicionado", "Superhost", "Lavadora", "Vista al mar"].map((label) => ({ id: label, label, icon: null })) });
 
-export default function RoomPage({ params }: { params: Promise<{ id: string }> }) {
+const RoomPage = ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = use(params);
   const [isLoading, setIsLoading] = useState(true);
   const [room, setRoom] = useState<Room | null>(null);
@@ -31,8 +31,8 @@ export default function RoomPage({ params }: { params: Promise<{ id: string }> }
   return (
     <main className="min-h-screen bg-[#f7f7f2] pb-36 md:px-6 md:pb-10 md:pt-6">
       <div className="mx-auto max-w-6xl space-y-6">
+        <Link href="/catalog" className="inline-flex items-center text-sm font-medium text-zinc-500 transition hover:text-zinc-900">← Volver al Catálogo</Link>
         <div className="relative">
-          <Link href="/catalog" className="absolute left-4 top-4 z-10 rounded-full bg-white/90 px-3 py-2 text-sm font-medium text-zinc-900 shadow-sm">← Volver</Link>
           <RoomGallery images={room.images} />
         </div>
         <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_340px] md:items-start">
@@ -42,4 +42,6 @@ export default function RoomPage({ params }: { params: Promise<{ id: string }> }
       </div>
     </main>
   );
-}
+};
+
+export default RoomPage;

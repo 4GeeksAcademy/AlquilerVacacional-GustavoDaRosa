@@ -1,4 +1,4 @@
-export default function MapPlaceholder() {
+const MapPlaceholder = () => {
   return (
     <section className="relative min-h-[360px] overflow-hidden rounded-none bg-neutral-100 md:min-h-[calc(100vh-7rem)] md:rounded-[28px]" aria-label="Mapa interactivo de Montevideo">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_rgba(255,255,255,0.95),_transparent_28%),linear-gradient(180deg,_rgba(245,245,244,0.96),_rgba(229,231,235,0.9))]" />
@@ -13,4 +13,6 @@ export default function MapPlaceholder() {
       </div>
     </section>
   );
-}
+};
+
+export default MapPlaceholder;

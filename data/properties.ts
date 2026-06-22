@@ -9,7 +9,7 @@ export const MOCK_PROPERTIES: Property[] = [
     pricePerNight: 128,
     rating: 4.82,
     reviewCount: 214,
-    imageUrl: "https://picsum.photos/seed/mvd-playa-01/1200/800",
+    imageUrl: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688",
     categoryId: "Playa",
     isGuestFavorite: true,
   },
@@ -21,7 +21,7 @@ export const MOCK_PROPERTIES: Property[] = [
     pricePerNight: 109,
     rating: 4.75,
     reviewCount: 167,
-    imageUrl: "https://picsum.photos/seed/mvd-playa-02/1200/800",
+    imageUrl: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
     categoryId: "Playa",
   },
   {
@@ -32,7 +32,7 @@ export const MOCK_PROPERTIES: Property[] = [
     pricePerNight: 390,
     rating: 4.93,
     reviewCount: 89,
-    imageUrl: "https://picsum.photos/seed/mvd-mansion-01/1200/800",
+    imageUrl: "https://images.unsplash.com/photo-1484154218962-a197022b5858",
     categoryId: "Mansiones",
     isGuestFavorite: true,
   },
@@ -44,7 +44,7 @@ export const MOCK_PROPERTIES: Property[] = [
     pricePerNight: 342,
     rating: 4.88,
     reviewCount: 121,
-    imageUrl: "https://picsum.photos/seed/mvd-mansion-02/1200/800",
+    imageUrl: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e",
     categoryId: "Mansiones",
   },
   {
@@ -55,7 +55,7 @@ export const MOCK_PROPERTIES: Property[] = [
     pricePerNight: 96,
     rating: 4.67,
     reviewCount: 302,
-    imageUrl: "https://picsum.photos/seed/mvd-trend-01/1200/800",
+    imageUrl: "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
     categoryId: "Tendencias",
   },
   {
@@ -66,7 +66,7 @@ export const MOCK_PROPERTIES: Property[] = [
     pricePerNight: 118,
     rating: 4.71,
     reviewCount: 190,
-    imageUrl: "https://picsum.photos/seed/mvd-trend-02/1200/800",
+    imageUrl: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
     categoryId: "Tendencias",
   },
   {
@@ -77,7 +77,7 @@ export const MOCK_PROPERTIES: Property[] = [
     pricePerNight: 84,
     rating: 4.58,
     reviewCount: 245,
-    imageUrl: "https://picsum.photos/seed/mvd-trend-03/1200/800",
+    imageUrl: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd",
     categoryId: "Tendencias",
   },
 ];

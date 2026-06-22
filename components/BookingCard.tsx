@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { BookingCardProps } from "@/types";
 
-export default function BookingCard({ pricePerNight, minGuests, maxGuests, initialGuests = 1, nights, checkInLabel, checkOutLabel, onReserve, isLoading }: BookingCardProps) {
+const BookingCard = ({ pricePerNight, minGuests, maxGuests, initialGuests = 1, nights, checkInLabel, checkOutLabel, onReserve, isLoading }: BookingCardProps) => {
   const [guests, setGuests] = useState(initialGuests);
   const change = (step: number) => setGuests((value) => Math.min(maxGuests, Math.max(minGuests, value + step)));
 
@@ -27,4 +27,6 @@ export default function BookingCard({ pricePerNight, minGuests, maxGuests, initi
       <button type="button" onClick={() => onReserve(guests)} disabled={isLoading} className="mt-4 w-full rounded-2xl bg-pink-600 px-4 py-3 text-sm font-semibold text-white disabled:opacity-60">Reservar ahora</button>
     </aside>
   );
-}
+};
+
+export default BookingCard;

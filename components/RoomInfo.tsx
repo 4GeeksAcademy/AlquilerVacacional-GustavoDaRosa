@@ -1,6 +1,6 @@
 import type { Room } from "@/types";
 
-export default function RoomInfo({ room }: { room: Room }) {
+const RoomInfo = ({ room }: { room: Room }) => {
   const initials = room.host.name.split(" ").slice(0, 2).map((part) => part[0]).join("");
 
   return (
@@ -30,4 +30,6 @@ export default function RoomInfo({ room }: { room: Room }) {
       </div>
     </section>
   );
-}
+};
+
+export default RoomInfo;

@@ -5,9 +5,10 @@ import type { Property } from "@/types";
 import { MOCK_PROPERTIES } from "@/data/properties";
 import Navbar from "../components/Navbar";
 import CategoryFilters from "../components/CategoryFilters";
+import HeroSearchBar from "../components/HeroSearchBar";
 import PropertyCard from "../components/PropertyCard";
 
-export default function HomePage() {
+const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategoryId, setActiveCategoryId] = useState("");
@@ -39,11 +40,19 @@ export default function HomePage() {
     <main className="min-h-screen bg-zinc-50 pb-10">
       <Navbar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
       <section className="mx-auto mt-4 max-w-6xl px-4 md:px-6">
-        <article className="overflow-hidden rounded-2xl bg-white shadow-sm">
-          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1400&auto=format&fit=crop" alt="Sala moderna en Montevideo" className="h-44 w-full object-cover md:h-64" />
-          <div className="space-y-1 p-4">
-            <h1 className="text-xl font-bold text-zinc-900">Alojamientos unicos en Montevideo</h1>
-            <p className="text-sm text-zinc-600">Reserva espacios con estilo para escapadas urbanas o frente al mar.</p>
+        <article className="relative overflow-hidden rounded-[30px] shadow-lg">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600&auto=format&fit=crop" alt="Sala moderna en Montevideo" className="h-[27rem] w-full object-cover md:h-[34rem]" />
+          <div className="absolute inset-0 bg-black/35" />
+          <div className="absolute inset-x-0 top-0 flex items-center justify-between px-6 py-5 text-sm font-semibold text-white">
+            <span>airbnb</span>
+            <span>Tu espacio en Airbnb</span>
+          </div>
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 px-4 text-center text-white">
+            <div className="space-y-2">
+              <h1 className="text-4xl font-bold leading-tight md:text-6xl">Alojamientos vacacionales en Montevideo</h1>
+              <p className="text-lg font-medium text-white/90">Busca y reserva un alojamiento unico en Airbnb</p>
+            </div>
+            <HeroSearchBar />
           </div>
         </article>
       </section>
@@ -65,4 +74,6 @@ export default function HomePage() {
       </section>
     </main>
   );
-}
+};
+
+export default HomePage;

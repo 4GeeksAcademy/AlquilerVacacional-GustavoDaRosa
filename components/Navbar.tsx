@@ -1,13 +1,15 @@
+import Link from "next/link";
+
 type NavbarProps = {
   searchQuery: string;
   onSearchChange: (value: string) => void;
 };
 
-export default function Navbar({ searchQuery, onSearchChange }: NavbarProps) {
+const Navbar = ({ searchQuery, onSearchChange }: NavbarProps) => {
   return (
     <header className="sticky top-0 z-30 border-b border-zinc-200 bg-zinc-50/95 px-4 py-3 backdrop-blur md:px-6">
       <nav className="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-3">
-        <p className="text-xl font-black tracking-tight text-zinc-900">MonteviStay</p>
+        <Link href="/" className="text-xl font-black tracking-tight text-zinc-900 transition hover:text-zinc-700">MonteviStay</Link>
         <div className="order-3 flex w-full items-center gap-2 rounded-full border border-zinc-300 bg-white px-3 py-2 md:order-2 md:flex-1">
           <svg viewBox="0 0 24 24" className="h-4 w-4 text-zinc-500" aria-hidden="true">
             <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" strokeWidth="2" />
@@ -41,4 +43,6 @@ export default function Navbar({ searchQuery, onSearchChange }: NavbarProps) {
       </nav>
     </header>
   );
-}
+};
+
+export default Navbar;

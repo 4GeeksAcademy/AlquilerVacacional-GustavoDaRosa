@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import CatalogHeader from "@/components/CatalogHeader";
 import MapPlaceholder from "@/components/MapPlaceholder";
@@ -7,7 +8,7 @@ import PropertyCard from "@/components/PropertyCard";
 import { MOCK_PROPERTIES } from "@/data/properties";
 import type { SortOrder } from "@/types";
 
-export default function CatalogPage() {
+const CatalogPage = () => {
   const [sortOrder, setSortOrder] = useState<SortOrder>("price-asc");
   const sortedProperties = useMemo(() => {
     const items = [...MOCK_PROPERTIES];
@@ -17,7 +18,7 @@ export default function CatalogPage() {
   return (
     <main className="min-h-screen bg-[#f7f7f2] pb-8 md:px-6 md:pt-6">
       <header className="sticky top-0 z-20 flex items-center gap-3 border-b border-zinc-200/70 bg-[#f7f7f2]/95 px-4 py-3 backdrop-blur md:mx-auto md:mb-6 md:max-w-6xl md:rounded-full md:border md:bg-white/95 md:px-5 md:shadow-sm">
-        <button type="button" className="grid h-10 w-10 place-items-center rounded-full border border-zinc-300/80 bg-white text-zinc-700 shadow-sm" aria-label="Volver">←</button>
+        <Link href="/" className="grid h-10 w-10 place-items-center rounded-full border border-zinc-300/80 bg-white text-zinc-700 shadow-sm transition hover:text-zinc-900" aria-label="Volver al inicio">←</Link>
         <div className="flex-1 rounded-full border border-zinc-300/80 bg-white px-4 py-2.5 shadow-sm">
           <p className="text-sm font-semibold leading-none text-zinc-900">Montevideo</p>
           <p className="mt-1 text-[11px] text-zinc-500">Fechas flexibles · 1 huesped</p>
@@ -41,4 +42,6 @@ export default function CatalogPage() {
       </div>
     </main>
   );
-}
+};
+
+export default CatalogPage;

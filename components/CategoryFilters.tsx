@@ -5,7 +5,7 @@ type CategoryFiltersProps = {
 
 const CATEGORIES = ["Playa", "Mansiones", "Tendencias", "Cabana", "Piscina", "Centro"] as const;
 
-export default function CategoryFilters({ activeCategoryId, onChange }: CategoryFiltersProps) {
+const CategoryFilters = ({ activeCategoryId, onChange }: CategoryFiltersProps) => {
   return (
     <section className="overflow-x-auto px-4 py-3 md:px-6" aria-label="Filtros por categoria">
       <div className="mx-auto w-full max-w-6xl">
@@ -33,4 +33,6 @@ export default function CategoryFilters({ activeCategoryId, onChange }: Category
       </div>
     </section>
   );
-}
+};
+
+export default CategoryFilters;

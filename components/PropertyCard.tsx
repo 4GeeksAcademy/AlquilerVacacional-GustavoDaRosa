@@ -5,7 +5,7 @@ type PropertyCardProps = {
   property: Property;
 };
 
-export default function PropertyCard({ property }: PropertyCardProps) {
+const PropertyCard = ({ property }: PropertyCardProps) => {
   return (
     <li className="list-none">
       <Link href={`/rooms/${property.id}`} className="block overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-600">
@@ -24,4 +24,6 @@ export default function PropertyCard({ property }: PropertyCardProps) {
       </Link>
     </li>
   );
-}
+};
+
+export default PropertyCard;

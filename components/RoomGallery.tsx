@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { RoomImage } from "@/types";
 
-export default function RoomGallery({ images, initialIndex = 0 }: { images: RoomImage[]; initialIndex?: number }) {
+const RoomGallery = ({ images, initialIndex = 0 }: { images: RoomImage[]; initialIndex?: number }) => {
   const [index, setIndex] = useState(initialIndex);
   const current = images[index];
   const move = (step: number) => setIndex((value) => (value + step + images.length) % images.length);
@@ -25,4 +25,6 @@ export default function RoomGallery({ images, initialIndex = 0 }: { images: Room
       </div>
     </section>
   );
-}
+};
+
+export default RoomGallery;

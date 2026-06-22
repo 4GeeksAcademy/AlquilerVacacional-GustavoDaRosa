@@ -5,7 +5,7 @@ const OPTIONS: Array<{ value: SortOrder; label: string }> = [
   { value: "price-desc", label: "Precio: mayor a menor" },
 ];
 
-export default function CatalogHeader({ totalResults, sortOrder, onSortChange }: CatalogHeaderProps) {
+const CatalogHeader = ({ totalResults, sortOrder, onSortChange }: CatalogHeaderProps) => {
   return (
     <section className="flex flex-col gap-3 border-b border-zinc-200/80 px-5 py-4 md:px-0 md:py-2" aria-label="Encabezado del catalogo">
       <p className="text-[13px] font-medium tracking-tight text-zinc-900">{totalResults} alojamientos en Montevideo</p>
@@ -25,4 +25,6 @@ export default function CatalogHeader({ totalResults, sortOrder, onSortChange }:
       </label>
     </section>
   );
-}
+};
+
+export default CatalogHeader;
